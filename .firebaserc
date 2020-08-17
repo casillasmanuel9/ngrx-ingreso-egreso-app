@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ngrx-ingreso-egreso-d26af": {
+      "hosting": {
+        "egreso-ingreso-app": [
+          "ngrx-ingreso-egreso-d26af"
+        ]
+      }
+    }
+  }
+}

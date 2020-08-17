@@ -122,8 +122,13 @@
               "devServerTarget": "egreso-ingreso-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "egreso-ingreso-app"
 }
