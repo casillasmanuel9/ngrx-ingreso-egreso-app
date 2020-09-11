@@ -1,6 +1,5 @@
+import { AuthLoadGuard } from './services/auth-load.guard';
 import { AuthGuard } from './services/auth.guard';
-import { dashBoardRoutes } from './dashboard/dashboard.routes';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NgModule } from '@angular/core';
@@ -12,14 +11,13 @@ const routes : Routes = [
     component: LoginComponent
   },
   {
-    path: 'register',
-    component: RegisterComponent
+    path: '',
+    loadChildren: () => import('./ingreso-egreso/ingreso-egreso.module').then(m => m.IngresoEgresoModule),
+    canActivate: [AuthGuard]
   },
   {
-    path: '',
-    component: DashboardComponent,
-    children: dashBoardRoutes,
-    canActivate: [ AuthGuard ]
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: '**',
